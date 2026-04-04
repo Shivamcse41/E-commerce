@@ -1,0 +1,10 @@
+# Common PHP/XAMPP ignores
+config/db.php
+.DS_Store
+Thumbs.db
+error_log
+php_errors.log
+
+# Uploads (optional, but good practice to keep repo clean)
+# uploads/*
+# !uploads/.gitkeep

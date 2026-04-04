@@ -1,0 +1,374 @@
+/* 
+   SmartCart - Myntra Redesign Main CSS 
+   A comprehensive style system for the full e-commerce experience.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #ff3f6c;
+    --dark: #282c3f;
+    --muted: #9496a0;
+    --border: #eaeaec;
+    --bg-light: #f5f5f6;
+    --white: #ffffff;
+    --font-main: 'Assistant', sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--dark);
+    background-color: var(--white);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* --- Navigation --- */
+.myntra-nav {
+    background: var(--white);
+    height: 80px;
+    padding: 0 4%;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.myntra-nav .logo {
+    font-weight: 800;
+    font-size: 26px;
+    color: var(--dark);
+    text-decoration: none;
+    margin-right: 50px;
+}
+
+.myntra-nav .logo span {
+    color: var(--primary);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    margin-right: auto;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .3px;
+    padding: 30px 0;
+    border-bottom: 4px solid transparent;
+    transition: all 0.2s;
+}
+
+.nav-menu a:hover {
+    border-bottom: 4px solid var(--primary);
+}
+
+.nav-search {
+    flex: 1;
+    max-width: 500px;
+    margin: 0 30px;
+    position: relative;
+}
+
+.nav-search input {
+    width: 100%;
+    background: var(--bg-light);
+    border: 1px solid transparent;
+    padding: 10px 15px 10px 45px;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+}
+
+.nav-search i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+}
+
+.nav-actions {
+    display: flex;
+    gap: 30px;
+}
+
+.action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 12px;
+    font-weight: 700;
+    position: relative;
+}
+
+.action-item i {
+    font-size: 18px;
+    margin-bottom: 3px;
+}
+
+/* --- Dropdown --- */
+.profile-dropdown {
+    position: absolute;
+    top: 55px;
+    right: -100px;
+    width: 300px;
+    background: #fff;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    display: none;
+    padding: 20px;
+}
+
+.action-item:hover .profile-dropdown {
+    display: block;
+}
+
+/* --- Listing Page Layout --- */
+.listing-container {
+    display: flex;
+    padding: 30px 4%;
+}
+
+.filters-sidebar {
+    width: 20%;
+    border-right: 1px solid var(--border);
+    padding-right: 20px;
+}
+
+.filter-section {
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 15px;
+}
+
+.filter-title {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.filter-item {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* --- Product Grid --- */
+.main-content {
+    width: 80%;
+    padding-left: 30px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s;
+}
+
+.product-card:hover {
+    box-shadow: 0 7px 15px 0 rgba(0,0,0,.1);
+}
+
+.img-wrapper {
+    width: 100%;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    background: var(--bg-light);
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-details {
+    padding: 10px;
+}
+
+.brand { font-weight: 700; font-size: 16px; }
+.name { color: var(--muted); font-size: 14px; margin: 3px 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.price { font-weight: 700; font-size: 14px; }
+.original-price { text-decoration: line-through; color: var(--muted); font-size: 12px; margin-left: 5px; }
+.discount { color: #ff905a; font-size: 12px; margin-left: 5px; }
+
+/* --- Product Details --- */
+.details-container {
+    padding: 40px 4%;
+    display: flex;
+    gap: 50px;
+}
+
+.image-gallery { width: 55%; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.image-gallery img { width: 100%; object-fit: cover; }
+
+.product-info { width: 45%; }
+.product-info h1 { font-size: 24px; font-weight: 700; margin-bottom: 5px; }
+.product-info .subtitle { font-size: 20px; color: var(--muted); margin-bottom: 20px; }
+
+.price-box { display: flex; align-items: baseline; gap: 10px; margin-bottom: 30px; }
+.price-box .main-price { font-size: 24px; font-weight: 700; }
+
+.btn-bag {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.btn-wishlist {
+    background: #fff;
+    color: var(--dark);
+    border: 1px solid var(--border);
+    padding: 15px 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    width: 100%;
+}
+
+/* --- Auth Center --- */
+.auth-bg {
+    min-height: calc(100vh - 80px);
+    background-color: var(--bg-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.auth-card {
+    background: #fff;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.auth-header {
+    background: linear-gradient(135deg, #fceade 0%, #f9dede 100%);
+    padding: 40px 30px;
+    text-align: left;
+}
+
+.auth-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.auth-header p {
+    font-size: 14px;
+    color: #535766;
+    margin-top: 5px;
+}
+
+.auth-body {
+    padding: 30px;
+}
+
+.auth-input-group {
+    margin-bottom: 20px;
+}
+
+.auth-input-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+    margin-bottom: 5px;
+}
+
+.auth-input-group input, 
+.auth-input-group select {
+    width: 100%;
+    border: 1px solid var(--border);
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 2px;
+}
+
+.auth-btn {
+    width: 100%;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-weight: 700;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* --- Profile Section --- */
+.account-container {
+    padding: 40px 10%;
+    display: flex;
+    gap: 40px;
+}
+
+.account-sidebar {
+    width: 250px;
+    border-right: 1px solid var(--border);
+}
+
+.sidebar-title {
+    font-weight: 800;
+    font-size: 16px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border);
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-link {
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.sidebar-link:hover, .sidebar-link.active {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.account-content {
+    flex: 1;
+}
+
+.content-card {
+    border: 1px solid var(--border);
+    padding: 30px;
+    background: #fff;
+}
