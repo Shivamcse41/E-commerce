@@ -65,7 +65,7 @@ $prod_qtys = array_column($product_perf, 'sold_qty');
         <div class="rounded-card p-3 d-flex align-items-center justify-content-between smooth-anim product-card">
             <div>
                 <h6 class="text-muted mb-1">Total Revenue</h6>
-                <h3 class="fw-bold mb-0 text-dark">$<?php echo number_format($total_revenue, 2) ?: '0.00'; ?></h3>
+                <h3 class="fw-bold mb-0 text-dark">₹<?php echo number_format($total_revenue, 2) ?: '0.00'; ?></h3>
             </div>
             <div class="bg-light p-3 rounded-circle text-info">
                 <i class="fas fa-wallet fs-4"></i>
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function() {
         data: {
             labels: <?php echo json_encode(array_reverse($dates)); ?>,
             datasets: [{
-                label: 'Revenue ($)',
+                label: 'Revenue (₹)',
                 data: <?php echo json_encode(array_reverse($totals)); ?>,
                 borderColor: '#e94560',
                 backgroundColor: 'rgba(233, 69, 96, 0.1)',

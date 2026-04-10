@@ -90,7 +90,7 @@ $totals = array_column($orders, 'total');
                 <img src="uploads/<?php echo htmlspecialchars($prod['product_image']); ?>" class="rounded" width="60" height="60" style="object-fit:cover;" onerror="this.src='https://via.placeholder.com/60'">
                 <div class="ms-3">
                     <h6 class="mb-0 fw-bold"><?php echo htmlspecialchars($prod['name']); ?></h6>
-                    <small class="text-muted">$<?php echo htmlspecialchars($prod['price']); ?></small><br>
+                    <small class="text-muted">₹<?php echo htmlspecialchars($prod['price']); ?></small><br>
                     <a href="?page=product_details&id=<?php echo $prod['id']; ?>" class="text-decoration-none small text-gradient fw-bold">View Product</a>
                 </div>
             </div>
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
         data: {
             labels: <?php echo json_encode(array_reverse($dates)); ?>,
             datasets: [{
-                label: 'Spent Amount ($)',
+                label: 'Spent Amount (₹)',
                 data: <?php echo json_encode(array_reverse($totals)); ?>,
                 backgroundColor: '#ffc107',
                 borderRadius: 5,

@@ -3,6 +3,12 @@ session_start();
 require_once '../config/db.php';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    if (!isset($_SESSION['user_id'])) {
+        $_SESSION['error'] = "Please log in to add items to your cart!";
+        header("Location: ../index.php?page=auth_form");
+        exit;
+    }
+
     $customer_id = $_SESSION['user_id'];
     $action = $_POST['action'];
     $product_id = $_POST['product_id'];

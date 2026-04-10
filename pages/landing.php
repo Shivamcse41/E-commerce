@@ -23,8 +23,8 @@ try {
                         <div class="brand">SmartCart Brand</div>
                         <div class="name"><?php echo htmlspecialchars($p['name']); ?></div>
                         <div class="price">
-                            Rs. <?php echo number_format($p['price'], 0); ?>
-                            <span class="original-price">Rs. <?php echo number_format($p['price'] * 1.2, 0); ?></span>
+                            ₹<?php echo number_format($p['price'], 0); ?>
+                            <span class="original-price">₹<?php echo number_format($p['price'] * 1.2, 0); ?></span>
                             <span class="discount">(20% OFF)</span>
                         </div>
                     </div>

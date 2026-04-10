@@ -34,7 +34,7 @@ $products = $stmt->fetchAll();
                             <td><img src="uploads/<?php echo htmlspecialchars($prod['product_image']); ?>" width="50" height="50" class="rounded" style="object-fit:cover" onerror="this.src='https://via.placeholder.com/50'"></td>
                             <td class="fw-bold"><?php echo htmlspecialchars($prod['name']); ?></td>
                             <td><?php echo htmlspecialchars($prod['category_name']); ?></td>
-                            <td>$<?php echo number_format($prod['price'], 2); ?></td>
+                            <td>₹<?php echo number_format($prod['price'], 2); ?></td>
                             <td>
                                 <?php if($prod['stock'] > 10): ?>
                                     <span class="badge bg-success"><?php echo $prod['stock']; ?></span>
@@ -82,7 +82,7 @@ $products = $stmt->fetchAll();
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-6 mb-3">
-                                                    <label class="form-label">Price ($)</label>
+                                                    <label class="form-label">Price (₹)</label>
                                                     <input type="number" step="0.01" name="price" class="form-control" value="<?php echo htmlspecialchars($prod['price']); ?>" required>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
@@ -157,7 +157,7 @@ $products = $stmt->fetchAll();
                     </div>
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">Price ($)</label>
+                            <label class="form-label">Price (₹)</label>
                             <input type="number" step="0.01" name="price" class="form-control" required>
                         </div>
                         <div class="col-md-6 mb-3">

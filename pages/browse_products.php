@@ -53,9 +53,9 @@ $all_categories = $pdo->query("SELECT * FROM categories")->fetchAll();
 
         <div class="filter-section">
             <h4 class="filter-title">Price Range</h4>
-            <label class="filter-item"><input type="checkbox"> Rs. 199 to Rs. 599</label>
-            <label class="filter-item"><input type="checkbox"> Rs. 600 to Rs. 999</label>
-            <label class="filter-item"><input type="checkbox"> Rs. 1000+</label>
+            <label class="filter-item"><input type="checkbox"> ₹199 to ₹599</label>
+            <label class="filter-item"><input type="checkbox"> ₹600 to ₹999</label>
+            <label class="filter-item"><input type="checkbox"> ₹1000+</label>
         </div>
 
         <div class="filter-section">
@@ -94,8 +94,8 @@ $all_categories = $pdo->query("SELECT * FROM categories")->fetchAll();
                             <div class="brand">SmartCart Brand</div>
                             <div class="name"><?php echo htmlspecialchars($prod['name']); ?></div>
                             <div class="price">
-                                Rs. <?php echo number_format($prod['price'], 0); ?>
-                                <span class="original-price">Rs. <?php echo number_format($prod['price'] * 1.2, 0); ?></span>
+                                ₹<?php echo number_format($prod['price'], 0); ?>
+                                <span class="original-price">₹<?php echo number_format($prod['price'] * 1.2, 0); ?></span>
                                 <span class="discount">(20% OFF)</span>
                             </div>
                         </div>

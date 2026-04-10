@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
         data: {
             labels: <?php echo json_encode(array_reverse($dates)); ?>,
             datasets: [{
-                label: 'Revenue ($)',
+                label: 'Revenue (₹)',
                 data: <?php echo json_encode(array_reverse($totals)); ?>,
                 borderColor: '#667eea',
                 backgroundColor: 'rgba(102, 126, 234, 0.1)',

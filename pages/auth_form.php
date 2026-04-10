@@ -24,6 +24,12 @@
                 <div class="text-center mt-3 small">
                     New to SmartCart? <a href="javascript:void(0)" onclick="toggleAuth('signup')" style="color:var(--primary); font-weight:700;">Create Account</a>
                 </div>
+                
+                <div class="text-center mt-3">
+                    <button type="button" style="border: 1px solid var(--primary); color: var(--primary); border-radius: 5px; padding: 5px 10px; background: transparent; cursor: pointer;" onclick="quickAdminLogin()">
+                        Quick Admin Login
+                    </button>
+                </div>
             </form>
 
             <!-- Signup Form (Hidden by default) -->
@@ -85,4 +91,10 @@ window.addEventListener('load', () => {
         toggleAuth('signup');
     }
 });
+
+function quickAdminLogin() {
+    const loginForm = document.getElementById('loginForm');
+    loginForm.querySelector('input[name="email"]').value = 'admin';
+    loginForm.querySelector('input[name="password"]').value = '123456';
+}
 </script>

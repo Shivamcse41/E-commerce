@@ -29,7 +29,7 @@ $orders = $stmt->fetchAll();
                             <tr>
                                 <td class="fw-bold">#<?php echo htmlspecialchars($order['id']); ?></td>
                                 <td><?php echo date('M d, Y h:i A', strtotime($order['created_at'])); ?></td>
-                                <td class="fw-bold">$<?php echo number_format($order['total_amount'], 2); ?></td>
+                                <td class="fw-bold">₹<?php echo number_format($order['total_amount'], 2); ?></td>
                                 <td>
                                     <?php 
                                         $badge_class = 'bg-secondary';
@@ -84,9 +84,9 @@ $orders = $stmt->fetchAll();
                                                                     <span><?php echo htmlspecialchars($itm['name']); ?></span>
                                                                 </div>
                                                             </td>
-                                                            <td>$<?php echo number_format($itm['price'], 2); ?></td>
+                                                            <td>₹<?php echo number_format($itm['price'], 2); ?></td>
                                                             <td><?php echo $itm['quantity']; ?></td>
-                                                            <td class="fw-bold">$<?php echo number_format($itm['price'] * $itm['quantity'], 2); ?></td>
+                                                            <td class="fw-bold">₹<?php echo number_format($itm['price'] * $itm['quantity'], 2); ?></td>
                                                             <?php if($order['status'] == 'Delivered'): ?>
                                                             <td><a href="?page=product_details&id=<?php echo $itm['product_id']; ?>#reviews" class="btn btn-sm btn-warning"><i class="fas fa-star"></i></a></td>
                                                             <?php endif; ?>

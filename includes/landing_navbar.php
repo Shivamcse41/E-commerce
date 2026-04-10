@@ -10,7 +10,7 @@ $nav_categories = [
     'Kids' => 'Kids',
     'Home & Living' => 'Home & Living',
     'Beauty' => 'Beauty',
-    'Genz' => 'Genz'
+    'Gen Z' => 'Gen Z'
 ];
 ?>
 

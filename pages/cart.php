@@ -38,7 +38,7 @@ $total = 0;
                                         <span class="fw-bold"><?php echo htmlspecialchars($item['name']); ?></span>
                                     </div>
                                 </td>
-                                <td>$<?php echo number_format($item['price'], 2); ?></td>
+                                <td>₹<?php echo number_format($item['price'], 2); ?></td>
                                 <td>
                                     <form method="POST" action="actions/cart_action.php" class="d-flex align-items-center">
                                         <input type="hidden" name="action" value="update">
@@ -46,7 +46,7 @@ $total = 0;
                                         <input type="number" name="quantity" value="<?php echo $item['quantity']; ?>" min="1" max="<?php echo $item['stock']; ?>" class="form-control form-control-sm text-center" style="width: 70px;" onchange="this.form.submit()">
                                     </form>
                                 </td>
-                                <td class="fw-bold">$<?php echo number_format($subtotal, 2); ?></td>
+                                <td class="fw-bold">₹<?php echo number_format($subtotal, 2); ?></td>
                                 <td>
                                     <form method="POST" action="actions/cart_action.php">
                                         <input type="hidden" name="action" value="remove">
@@ -75,7 +75,7 @@ $total = 0;
             <h5 class="fw-bold mb-3">Order Summary</h5>
             <div class="d-flex justify-content-between mb-2">
                 <span class="text-muted">Subtotal</span>
-                <span class="fw-bold">$<?php echo number_format($total, 2); ?></span>
+                <span class="fw-bold">₹<?php echo number_format($total, 2); ?></span>
             </div>
             <div class="d-flex justify-content-between mb-3 border-bottom pb-3">
                 <span class="text-muted">Shipping</span>
@@ -83,7 +83,7 @@ $total = 0;
             </div>
             <div class="d-flex justify-content-between mb-4">
                 <h5 class="fw-bold">Total</h5>
-                <h5 class="fw-bold text-gradient">$<?php echo number_format($total, 2); ?></h5>
+                <h5 class="fw-bold text-gradient">₹<?php echo number_format($total, 2); ?></h5>
             </div>
             <a href="?page=checkout" class="btn btn-primary-gradient w-100 rounded-pill py-2 fw-bold">Proceed to Checkout</a>
         </div>

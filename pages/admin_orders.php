@@ -38,7 +38,7 @@ $orders = $stmt->fetchAll();
                                     <?php echo htmlspecialchars($order['customer_name']); ?><br>
                                     <small class="text-muted"><?php echo htmlspecialchars($order['customer_email']); ?></small>
                                 </td>
-                                <td class="fw-bold">$<?php echo number_format($order['total_amount'], 2); ?></td>
+                                <td class="fw-bold">₹<?php echo number_format($order['total_amount'], 2); ?></td>
                                 <td>
                                     <?php 
                                         $badge_class = 'bg-secondary';
@@ -103,9 +103,9 @@ $orders = $stmt->fetchAll();
                                                                         </div>
                                                                     </td>
                                                                     <td><?php echo htmlspecialchars($itm['seller_name']); ?></td>
-                                                                    <td>$<?php echo number_format($itm['price'], 2); ?></td>
+                                                                    <td>₹<?php echo number_format($itm['price'], 2); ?></td>
                                                                     <td><?php echo $itm['quantity']; ?></td>
-                                                                    <td class="fw-bold">$<?php echo number_format($itm['price'] * $itm['quantity'], 2); ?></td>
+                                                                    <td class="fw-bold">₹<?php echo number_format($itm['price'] * $itm['quantity'], 2); ?></td>
                                                                 </tr>
                                                                 <?php endforeach; ?>
                                                             </tbody>

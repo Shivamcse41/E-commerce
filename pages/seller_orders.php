@@ -41,7 +41,7 @@ $orders = $stmt->fetchAll();
                                 <td class="fw-bold">#<?php echo htmlspecialchars($order['id']); ?></td>
                                 <td><?php echo date('M d, Y h:i A', strtotime($order['created_at'])); ?></td>
                                 <td><span class="d-inline-block text-truncate" style="max-width: 200px;" title="<?php echo htmlspecialchars($order['products_ordered']); ?>"><?php echo htmlspecialchars($order['products_ordered']); ?></span></td>
-                                <td class="fw-bold">$<?php echo number_format($order['total_amount'], 2); ?></td>
+                                <td class="fw-bold">₹<?php echo number_format($order['total_amount'], 2); ?></td>
                                 <td>
                                     <?php 
                                         $badge_class = 'bg-secondary';

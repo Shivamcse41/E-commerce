@@ -38,8 +38,8 @@ if (!$p) {
         <div class="subtitle"><?php echo htmlspecialchars($p['name']); ?></div>
         
         <div class="price-box">
-            <span class="main-price">Rs. <?php echo number_format($p['price'], 0); ?></span>
-            <span style="font-size: 18px; color: var(--muted); text-decoration: line-through;">Rs. <?php echo number_format($p['price'] * 1.2, 0); ?></span>
+            <span class="main-price">₹<?php echo number_format($p['price'], 0); ?></span>
+            <span style="font-size: 18px; color: var(--muted); text-decoration: line-through;">₹<?php echo number_format($p['price'] * 1.2, 0); ?></span>
             <span style="font-size: 18px; color: #ff905a; font-weight: 700;">(20% OFF)</span>
         </div>
         
@@ -60,10 +60,9 @@ if (!$p) {
                 <input type="hidden" name="quantity" value="1">
                 <button type="submit" class="btn-bag"><i class="fas fa-shopping-bag me-2"></i> ADD TO BAG</button>
             </form>
-            <form method="POST" action="actions/wishlist_action.php" style="flex: 1;">
-                <input type="hidden" name="product_id" value="<?php echo $p['id']; ?>">
-                <button type="button" class="btn-wishlist"><i class="far fa-heart me-2"></i> WISHLIST</button>
-            </form>
+            <a href="index.php?page=wishlist" style="flex: 1; display: block; text-decoration: none;">
+                <button type="button" class="btn-wishlist" style="width: 100%;"><i class="far fa-heart me-2"></i> WISHLIST</button>
+            </a>
         </div>
 
         <div style="border-top: 1px solid var(--border); padding-top: 20px;">

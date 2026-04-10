@@ -32,7 +32,7 @@ $products = $stmt->fetchAll();
                             <td class="fw-bold"><?php echo htmlspecialchars($prod['name']); ?></td>
                             <td><span class="badge bg-secondary"><?php echo htmlspecialchars($prod['seller_name']); ?></span></td>
                             <td><?php echo htmlspecialchars($prod['category_name']); ?></td>
-                            <td>$<?php echo number_format($prod['price'], 2); ?></td>
+                            <td>₹<?php echo number_format($prod['price'], 2); ?></td>
                             <td>
                                 <button class="btn btn-sm btn-outline-info rounded-circle me-1" data-bs-toggle="modal" data-bs-target="#editProductModal<?php echo $prod['id']; ?>"><i class="fas fa-edit"></i></button>
                                 <form method="POST" action="actions/product_action.php" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this product?');">
@@ -70,7 +70,7 @@ $products = $stmt->fetchAll();
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-6 mb-3">
-                                                    <label class="form-label">Price ($)</label>
+                                                    <label class="form-label">Price (₹)</label>
                                                     <input type="number" step="0.01" name="price" class="form-control" value="<?php echo htmlspecialchars($prod['price']); ?>" required>
                                                 </div>
                                                 <div class="col-md-6 mb-3">

@@ -74,7 +74,7 @@ $user = $stmt->fetch();
                         <small class="text-muted">Qty: <?php echo $item['quantity']; ?></small>
                     </div>
                 </div>
-                <span class="text-muted">$<?php echo number_format($item['price'] * $item['quantity'], 2); ?></span>
+                <span class="text-muted">₹<?php echo number_format($item['price'] * $item['quantity'], 2); ?></span>
             </div>
             <?php endforeach; ?>
             
@@ -82,7 +82,7 @@ $user = $stmt->fetch();
             
             <div class="d-flex justify-content-between mb-4 mt-3">
                 <h5 class="fw-bold">Total</h5>
-                <h5 class="fw-bold text-gradient">$<?php echo number_format($total, 2); ?></h5>
+                <h5 class="fw-bold text-gradient">₹<?php echo number_format($total, 2); ?></h5>
             </div>
             <input type="hidden" name="total_amount" value="<?php echo $total; ?>">
             <button type="submit" class="btn btn-primary-gradient w-100 rounded-pill py-2 fw-bold">Place Order</button>
